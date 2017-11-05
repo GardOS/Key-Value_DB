@@ -1,20 +1,27 @@
 #ifndef NODEHANDLER_H_
 #define NODEHANDLER_H_
 
-typedef unsigned long ULONG;
+#define FILENAME "key-values.txt"
 
-typedef struct _Node {
+#define TEXT_NODE 0
+#define NUMERIC_NODE 1
+#define INVALID_NODE 2
+
+typedef struct _NODE {
 	char *keyName;
 	char *strValue;
-	ULONG intValue;
-	struct _Node *next;
-	struct _Node *down;
-} Node;
+	unsigned long intValue;
+	struct _NODE *next;
+	struct _NODE *down;
+} NODE;
 
-typedef int bool;
-enum { false, true};
+typedef int bool; //Outside naming convention, but lets pretend its a type
+enum { false, true };
 
-Node *CreateNode (char *keyName, char *strValue, int intValue);
-bool isFolder(Node *node);
+NODE *CreateNode (char *keyName);
+void ParseFile(NODE *rootNode);
+char *SubString(int start, int end, char *str);
+NODE *FindNode(NODE *node, char *location);
+size_t getline(char **line, size_t *bufferSize, FILE *file);
 
 #endif //NODEHANDLER_H_
