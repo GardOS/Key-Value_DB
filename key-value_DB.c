@@ -61,7 +61,7 @@ int main (void)
 	printf("\nGetValue with text: \n");
 	status = GetValue(strKey, NODE_TEXT_TYPE, &strValue);
 	if(status == NODE_OK){
-		printf("\nGetValue with text: %s = %s\n", strKey, strValue);
+		printf("%s = %s\n", strKey, strValue);
 	} else if(status == NODE_WRONG_TYPE){
 		printf("%s did not point to node with type string\n", strKey);
 	} else{
@@ -72,7 +72,7 @@ int main (void)
 	printf("\nGetValue with number: \n");
 	status = GetValue(numKey, NODE_NUMERIC_TYPE, &numValue);
 	if(status == NODE_OK){
-		printf("\nGetValue with number: %s = %lu\n", numKey, numValue);
+		printf("%s = %lu\n", numKey, numValue);
 	} else if(status == NODE_WRONG_TYPE){
 		printf("%s did not point to node with type number\n", numKey);
 	} else{

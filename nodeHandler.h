@@ -52,5 +52,6 @@ char *GetText(char *keyName, char *language);
 NODE *FindNode(NODE *node, char *location);
 char *SubString(int start, int end, char *str);
 void PrintTree(NODE *node);
+size_t getline(char **line, size_t *bufferSize, FILE *file);
 
 #endif //NODEHANDLER_H_
